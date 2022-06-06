@@ -3,11 +3,10 @@ package ru.kata.spring.boot_security.demo.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.UserService;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/admin")
+@RequestMapping("rest/admin")
 public class AdminRestController {
     private final UserService userService;
 
@@ -22,7 +21,7 @@ public class AdminRestController {
 
     @GetMapping("/{id}")
     public User show(@PathVariable Long id) {
-        return userService.getUserById(id);
+        return userService.getUser(id);
     }
 
     @PostMapping()

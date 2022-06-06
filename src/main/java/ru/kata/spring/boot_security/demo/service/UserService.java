@@ -12,7 +12,7 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-    User getUserById(long id);
+    User getUser(long id);
 
     void updateUser(User userUpdate, Set<Role> roles);
 

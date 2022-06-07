@@ -2,6 +2,8 @@ const url = 'http://localhost:8080/rest/user'
 let loggedInUser = document.querySelector('#User');
 let loggedUser = document.querySelector('#navBarUser')
 
+// Информация о пользователе
+
 fetch(url)
     .then(res => res.json())
     .then(data => {

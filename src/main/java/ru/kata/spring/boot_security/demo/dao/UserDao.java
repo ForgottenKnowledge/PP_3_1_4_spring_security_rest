@@ -9,14 +9,9 @@ import java.util.Set;
 public interface UserDao {
 
     List<User> getAllUsers();
-
     void saveUser(User user);
-
     User getUser(Long id);
-
     void updateUser(User user, Set<Role> roles);
-
     void deleteUser(Long id);
-
     User getUser(String name);
 }

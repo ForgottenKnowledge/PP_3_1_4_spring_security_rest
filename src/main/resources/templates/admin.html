@@ -2,22 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
+
     <meta charset="UTF-8"/>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>Admin panel</title>
+
 </head>
+
 <body>
 
-<!--Панель навигации начало-->
 <nav class="navbar navbar-expand-xl navbar-dark text-white bg-dark">
 
     <div class="container-fluid">
         <div class="collapse navbar-collapse show" id="navBarAdmin">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-                <!-- app.js -->
+                <!-- admin.js -->
             </ul>
         </div>
 
@@ -27,12 +29,11 @@
 
     </div>
 </nav>
-<!--Панель навигации конец-->
 
-<!--Тело страницы начало-->
 <div class="container-fluid">
 
     <div class="row">
+
         <!--    выбор юзер админ начало-->
         <div class="p-0 col-2">
             <div class="nav flex-column nav-pills pt-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -44,24 +45,26 @@
             </div>
         </div>
         <!--    выбор юзер админ конец-->
+
         <div class="col-10 px-0">
             <div class="container-fluid">
                 <h1>Admin panel</h1>
                 <!-- вкладки панели администратора начало -->
                 <ul class="nav nav-tabs">
+
                     <li class="nav-item">
-                        <a id="very_important_button" class="nav-link active" data-toggle="tab" href="#usersTable">Users Table</a>
+                        <a id="very_important_button" class="nav-link active" data-toggle="tab" href="#usersTable">Users
+                            Table</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#addUser" data-toggle="tab">New user</a>
                     </li>
+
                 </ul>
                 <!-- вкладки панели администратора конец -->
 
-                <!-- содержимое таблицы начало-->
                 <div class="tab-content">
-                    <!-- Список всех пользователей начало-->
                     <div class="tab-pane fade show active" id="usersTable">
                         <div class="card">
                             <div class="card-header">
@@ -79,7 +82,7 @@
                                         <th>Delete</th>
                                     </tr>
                                     <tbody id="allUsers">
-                                    <!-- app.js -->
+                                    <!-- admin.js -->
                                     </tbody>
                                 </table>
                             </div>
@@ -94,51 +97,49 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel7">Edit
-                                            user</h5>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
+                                        <h5 class="modal-title" id="exampleModalLabel7">Edit user</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+
                                     <div class="modal-body text-center">
+
                                         <div class="form-group">
-                                            <input th:type="hidden" class="form-control" id="id0"
-                                                   th:name="id">
+                                            <input th:type="hidden" class="form-control" id="id0" th:name="id">
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="name0"
-                                                   class="col-form-label"><b>Name</b></label>
-                                            <input type="text" class="form-control" id="name0"
-                                                   th:name="name">
+                                            <label for="name0" class="col-form-label"><b>Name</b></label>
+                                            <input type="text" class="form-control" id="name0" th:name="name">
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="surname0"
-                                                   class="col-form-label"><b>Surname</b></label>
-                                            <input type="text" class="form-control" id="surname0"
-                                                   th:name="surname">
+                                            <label for="surname0" class="col-form-label"><b>Surname</b></label>
+                                            <input type="text" class="form-control" id="surname0" th:name="surname">
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="age0"
-                                                   class="col-form-label"><b>Age</b></label>
-                                            <input type="number" class="form-control" id="age0"
-                                                   th:name="age">
+                                            <label for="age0" class="col-form-label"><b>Age</b></label>
+                                            <input type="number" class="form-control" id="age0" th:name="age">
                                         </div>
+
                                         <div class="form-group">
                                             <label for="password0" class="col-form-label"><b>Password</b></label>
                                             <input type="password" class="form-control" id="password0"
                                                    th:name="password">
                                         </div>
+
                                         <label for="roles0"><b>Role</b></label>
-                                        <select multiple class="form-control form-control-sm"
-                                                id="roles0" size="2" required>
+                                        <select multiple class="form-control form-control-sm" id="roles0" size="2"
+                                                required>
                                             <option selected="selected" value="2">ADMIN</option>
                                             <option value="1">USER</option>
                                         </select>
+
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                         </button>
                                         <button type="submit" class="btn btn-primary">Edit</button>
                                     </div>
@@ -161,43 +162,39 @@
                                 </div>
                                 <form>
                                     <div class="modal-body text-center">
+
                                         <div class="form-group">
-                                            <label for="id2"
-                                                   class="col-form-label"><b>ID</b></label>
-                                            <input th:type="text" class="form-control" id="id2"
-                                                   th:name="id" disabled/>
+                                            <label for="id2" class="col-form-label"><b>ID</b></label>
+                                            <input th:type="text" class="form-control" id="id2" th:name="id" disabled/>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="name2"
-                                                   class="col-form-label"><b>Name</b></label>
-                                            <input type="text" class="form-control" id="name2"
-                                                   th:name="name" disabled/>
+                                            <label for="name2" class="col-form-label"><b>Name</b></label>
+                                            <input type="text" class="form-control" id="name2" th:name="name" disabled/>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="surname2"
-                                                   class="col-form-label"><b>Surname</b></label>
-                                            <input type="text" class="form-control" id="surname2"
-                                                   th:name="surname" disabled/>
+                                            <label for="surname2" class="col-form-label"><b>Surname</b></label>
+                                            <input type="text" class="form-control" id="surname2" th:name="surname"
+                                                   disabled/>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="age2"
-                                                   class="col-form-label"><b>Age</b></label>
-                                            <input type="number" class="form-control" id="age2"
-                                                   th:name="age" disabled/>
+                                            <label for="age2" class="col-form-label"><b>Age</b></label>
+                                            <input type="number" class="form-control" id="age2" th:name="age" disabled/>
                                         </div>
+
                                         <label for="roles2"><b>Role</b></label>
                                         <select multiple class="form-control form-control-sm"
-                                                id="roles2"  size="2" required
+                                                id="roles2" size="2" required
                                                 disabled/>
                                         <option selected="selected" value="2">ADMIN</option>
                                         <option value="1">USER</option>
                                         </select>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                                             </button>
-                                            <button type="submit" class="btn btn-danger">Delete
-                                            </button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </div>
                                     </div>
                                 </form>
@@ -222,8 +219,7 @@
                                 <input th:type="number" class="form-control" id="age3"/>
 
                                 <label for="password3"><b>Password</b></label>
-                                <input th:type="password" class="form-control" id="password3"
-                                       required/>
+                                <input th:type="password" class="form-control" id="password3" required/>
 
                                 <label for="roles3"><b>Role</b></label>
                                 <select multiple class="form-control form-control-sm" id="roles3"
@@ -232,8 +228,8 @@
                                     <option value="1">USER</option>
                                 </select>
                                 <br>
-                                <button th:type="submit" class="btn btn-success" value="Add new user" id="add">
-                                    Add new user
+                                <button th:type="submit" class="btn btn-success" value="Add new user" id="add">Add new
+                                    user
                                 </button>
                             </form>
                         </div>
@@ -242,12 +238,10 @@
                 </div>
             </div>
         </div>
-        <!-- Список всех пользователей конец -->
     </div>
-    <!-- содержимое таблицы конец-->
 </div>
-<!--Тело страницы конец-->
-<script type="text/javascript" src="app.js"></script>
+
+<script type="text/javascript" src="admin.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

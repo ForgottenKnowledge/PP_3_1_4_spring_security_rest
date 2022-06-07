@@ -1,6 +1,5 @@
 package ru.kata.spring.boot_security.demo.dao;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.model.User;
@@ -15,11 +14,6 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    //    private final PasswordEncoder passwordEncoder;
-//
-//    public UserDaoImpl(PasswordEncoder passwordEncoder) {
-//        this.passwordEncoder = passwordEncoder;
-//    }
     @Override
     public List<User> getAllUsers() {
         return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();

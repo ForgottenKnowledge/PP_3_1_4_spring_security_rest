@@ -29,9 +29,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/user/**").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-                .antMatchers("/", "/index", "/logout", "/login", "rest/admin/**", "rest/user/**").permitAll()
+                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().successHandler(successUserHandler)
@@ -40,7 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();
     }
-
 
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

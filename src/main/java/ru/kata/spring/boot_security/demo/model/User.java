@@ -20,12 +20,16 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "surname")
     private String surname;
 
+    @Column(name = "age")
     private Integer age;
 
+    @Column(name = "password")
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -37,7 +41,7 @@ public class User implements UserDetails {
         this.age = age;
     }
 
-    public  User(){
+    public User() {
     }
 
     @JsonIgnore

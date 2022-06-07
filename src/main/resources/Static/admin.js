@@ -161,6 +161,7 @@ on(document, 'click', '#delete-user', e => {
 })
 
 //Навигационня панель
+
 const url3 = 'http://localhost:8080/rest/user'
 let loggedUserHeaderElem = document.querySelector('#navBarAdmin')
 

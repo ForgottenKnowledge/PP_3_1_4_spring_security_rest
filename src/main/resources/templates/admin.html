@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8"/>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse show" id="navBarAdmin">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-                <!-- js -->
+                <!-- app.js -->
             </ul>
         </div>
 
@@ -79,7 +79,7 @@
                                         <th>Delete</th>
                                     </tr>
                                     <tbody id="allUsers">
-                                    <!-- application.js -->
+                                    <!-- app.js -->
                                     </tbody>
                                 </table>
                             </div>
@@ -94,7 +94,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel1">Edit
+                                        <h5 class="modal-title" id="exampleModalLabel7">Edit
                                             user</h5>
                                         <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close">
@@ -103,35 +103,35 @@
                                     </div>
                                     <div class="modal-body text-center">
                                         <div class="form-group">
-                                            <input th:type="hidden" class="form-control" id="id"
+                                            <input th:type="hidden" class="form-control" id="id0"
                                                    th:name="id">
                                         </div>
                                         <div class="form-group">
-                                            <label for="name"
+                                            <label for="name0"
                                                    class="col-form-label"><b>Name</b></label>
-                                            <input type="text" class="form-control" id="name"
+                                            <input type="text" class="form-control" id="name0"
                                                    th:name="name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="surname"
+                                            <label for="surname0"
                                                    class="col-form-label"><b>Surname</b></label>
-                                            <input type="text" class="form-control" id="surname"
+                                            <input type="text" class="form-control" id="surname0"
                                                    th:name="surname">
                                         </div>
                                         <div class="form-group">
-                                            <label for="age"
+                                            <label for="age0"
                                                    class="col-form-label"><b>Age</b></label>
-                                            <input type="number" class="form-control" id="age"
+                                            <input type="number" class="form-control" id="age0"
                                                    th:name="age">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password" class="col-form-label"><b>Password</b></label>
-                                            <input type="password" class="form-control" id="password"
+                                            <label for="password0" class="col-form-label"><b>Password</b></label>
+                                            <input type="password" class="form-control" id="password0"
                                                    th:name="password">
                                         </div>
-                                        <label for="roles"><b>Role</b></label>
+                                        <label for="roles0"><b>Role</b></label>
                                         <select multiple class="form-control form-control-sm"
-                                                id="roles" size="2" required>
+                                                id="roles0" size="2" required>
                                             <option selected="selected" value="2">ADMIN</option>
                                             <option value="1">USER</option>
                                         </select>
@@ -162,32 +162,32 @@
                                 <form>
                                     <div class="modal-body text-center">
                                         <div class="form-group">
-                                            <label for="id1"
+                                            <label for="id2"
                                                    class="col-form-label"><b>ID</b></label>
-                                            <input th:type="text" class="form-control" id="id1"
+                                            <input th:type="text" class="form-control" id="id2"
                                                    th:name="id" disabled/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="name1"
+                                            <label for="name2"
                                                    class="col-form-label"><b>Name</b></label>
-                                            <input type="text" class="form-control" id="name1"
+                                            <input type="text" class="form-control" id="name2"
                                                    th:name="name" disabled/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="surname1"
+                                            <label for="surname2"
                                                    class="col-form-label"><b>Surname</b></label>
-                                            <input type="text" class="form-control" id="surname1"
+                                            <input type="text" class="form-control" id="surname2"
                                                    th:name="surname" disabled/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="age1"
+                                            <label for="age2"
                                                    class="col-form-label"><b>Age</b></label>
-                                            <input type="number" class="form-control" id="age1"
+                                            <input type="number" class="form-control" id="age2"
                                                    th:name="age" disabled/>
                                         </div>
-                                        <label for="roles1"><b>Role</b></label>
+                                        <label for="roles2"><b>Role</b></label>
                                         <select multiple class="form-control form-control-sm"
-                                                id="roles1" size="2" required
+                                                id="roles2"  size="2" required
                                                 disabled/>
                                         <option selected="selected" value="2">ADMIN</option>
                                         <option value="1">USER</option>
@@ -212,21 +212,21 @@
                         <div class="col-md bg-white border">
                             <form align="center" class="offset-md-4 col-md-3 mt-4 mb-4" th:align="center">
 
-                                <label for="name2"><b>Name</b></label>
-                                <input th:type="text" class="form-control" id="name2" required/>
+                                <label for="name3"><b>Name</b></label>
+                                <input th:type="text" class="form-control" id="name3" required/>
 
-                                <label for="surname2"><b>Surname</b></label>
-                                <input th:type="text" class="form-control" id="surname2" required/>
+                                <label for="surname3"><b>Surname</b></label>
+                                <input th:type="text" class="form-control" id="surname3" required/>
 
-                                <label for="age2"><b>Age</b></label>
-                                <input th:type="number" class="form-control" id="age2"/>
+                                <label for="age3"><b>Age</b></label>
+                                <input th:type="number" class="form-control" id="age3"/>
 
-                                <label for="password2"><b>Password</b></label>
-                                <input th:type="password" class="form-control" id="password2"
+                                <label for="password3"><b>Password</b></label>
+                                <input th:type="password" class="form-control" id="password3"
                                        required/>
 
-                                <label for="roles2"><b>Role</b></label>
-                                <select multiple class="form-control form-control-sm" id="roles2"
+                                <label for="roles3"><b>Role</b></label>
+                                <select multiple class="form-control form-control-sm" id="roles3"
                                         size="2" required>
                                     <option selected="selected" value="2">ADMIN</option>
                                     <option value="1">USER</option>
@@ -246,10 +246,8 @@
     </div>
     <!-- содержимое таблицы конец-->
 </div>
-
 <!--Тело страницы конец-->
-
-<script type="text/javascript" src="application.js"></script>
+<script type="text/javascript" src="app.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

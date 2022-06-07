@@ -19,12 +19,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final UserDao userDao;
 
-
     public UserServiceImpl(UserDao userDao, PasswordEncoder passwordEncoder) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
     }
-
 
     @Override
     public List<User> getAllUsers() {
@@ -35,8 +33,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     @Transactional
     public void saveNewUser(User user, Set<Role> roles) {
-        user.setRoles(roles);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRoles(roles);
         userDao.saveUser(user);
     }
 
@@ -47,20 +45,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional
-    public void updateUser(User userUpdate, Set<Role> roles) {
-//        String password = getUser(userUpdate.getId()).getPassword();
-//        if (userUpdate.getPassword().equals(password)) {
-//            userUpdate.setPassword(password);
-//        } else {
-//            userUpdate.setPassword(passwordEncoder.encode(userUpdate.getPassword()));
-//        }
-//        userUpdate.setRoles(roles);
-//        userDao.updateUser(userUpdate, roles);
-        if (!userUpdate.getPassword().equals(getUser(userUpdate.getId()).getPassword())){
-            userUpdate.setPassword(passwordEncoder.encode(userUpdate.getPassword()));
+    public void updateUser(User user, Set<Role> roles) {
+        if (!user.getPassword().equals(getUser(user.getId()).getPassword())){
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
         }
-        userUpdate.setRoles(roles);
-        userDao.updateUser(userUpdate, roles);
+        user.setRoles(roles);
+        userDao.updateUser(user, roles);
     }
 
     @Override

@@ -48,11 +48,11 @@ fetch(url, {mode: 'cors'})
 // Добавить пользователя
 
 const addUserForm = document.querySelector('#addUser')
-const addName = document.getElementById('name2')
-const addSurname = document.getElementById('surname2')
-const addAge = document.getElementById('age2')
-const addPassword = document.getElementById('password2')
-const addRoles = document.getElementById('roles2')
+const addName = document.getElementById('name3')
+const addSurname = document.getElementById('surname3')
+const addAge = document.getElementById('age3')
+const addPassword = document.getElementById('password3')
+const addRoles = document.getElementById('roles3')
 
 addUserForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -63,8 +63,8 @@ addUserForm.addEventListener('submit', (e) => {
         },
         body: JSON.stringify({
             name: addName.value,
-            lastName: addSurname.value,
-            email: addAge.value,
+            surname: addSurname.value,
+            age: addAge.value,
             password: addPassword.value,
             roles: [
                 addRoles.value
@@ -93,12 +93,12 @@ const on = (element, event, selector, handler) => {
 
 on(document, 'click', '#edit-user', e => {
     const userInfo = e.target.parentNode.parentNode
-    document.getElementById('id').value = userInfo.children[0].innerHTML
-    document.getElementById('name').value = userInfo.children[1].innerHTML
-    document.getElementById('surname').value = userInfo.children[2].innerHTML
-    document.getElementById('age').value = userInfo.children[3].innerHTML
-    document.getElementById('roles').value = userInfo.children[4].innerHTML
-    document.getElementById('password').value = userInfo.children[5].innerHTML
+    document.getElementById('id0').value = userInfo.children[0].innerHTML
+    document.getElementById('name0').value = userInfo.children[1].innerHTML
+    document.getElementById('surname0').value = userInfo.children[2].innerHTML
+    document.getElementById('age0').value = userInfo.children[3].innerHTML
+    document.getElementById('roles0').value = userInfo.children[4].innerHTML
+    document.getElementById('password0').value = userInfo.children[5].innerHTML
 
     $("#modalEdit").modal("show")
 })
@@ -112,13 +112,13 @@ editUserForm.addEventListener('submit', (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: document.getElementById('id').value,
-            name: document.getElementById('name').value,
-            surname: document.getElementById('surname').value,
-            age: document.getElementById('age').value,
-            password: document.getElementById('password').value,
+            id: document.getElementById('id0').value,
+            name: document.getElementById('name0').value,
+            surname: document.getElementById('surname0').value,
+            age: document.getElementById('age0').value,
+            password: document.getElementById('password0').value,
             roles: [
-                document.getElementById('roles').value
+                document.getElementById('roles0').value
             ]
         })
     })
@@ -151,11 +151,11 @@ on(document, 'click', '#delete-user', e => {
     const fila2 = e.target.parentNode.parentNode
     currentUserId = fila2.children[0].innerHTML
 
-    document.getElementById('id1').value = fila2.children[0].innerHTML
-    document.getElementById('name1').value = fila2.children[1].innerHTML
-    document.getElementById('surname1').value = fila2.children[2].innerHTML
-    document.getElementById('age1').value = fila2.children[3].innerHTML
-    document.getElementById('roles1').value = fila2.children[4].innerHTML
+    document.getElementById('id2').value = fila2.children[0].innerHTML
+    document.getElementById('name2').value = fila2.children[1].innerHTML
+    document.getElementById('surname2').value = fila2.children[2].innerHTML
+    document.getElementById('age2').value = fila2.children[3].innerHTML
+    document.getElementById('roles2').value = fila2.children[4].innerHTML
 
     $("#modalDelete").modal("show")
 })
@@ -171,3 +171,4 @@ fetch(url3)
                 <span class="align-middle mr-1"> with roles:  </span> 
                 <span>  ${data.roles.map(role => role.name === 'ROLE_USER' ? 'USER' : 'ADMIN')}</span>`;
     })
+
